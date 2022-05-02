@@ -1,0 +1,45 @@
+#include<stdio.h>
+void read(int A[],int n);
+void display(int A[],int n);
+void reverse(int A[],int n);
+main()
+{
+int A[30],i,n,temp,j,k;
+printf("Enter the size of array\n");
+scanf("%d",&n);
+printf("Enter elements of the array:\n");
+read(A,n);
+printf("Elements of the array before sorting:\n");
+display(A,n);
+reverse(A,n);
+printf("\nElements of the array after sorting:\n");
+display(A,n);
+}
+void read(int A[],int n)
+{
+int i;
+for(i=0;i<n;i++)
+scanf("%d",&A[i]);
+}
+void display(int A[30],int n)
+{
+int i;
+for(i=0;i<n;i++)
+printf("%d\t",A[i]);
+}
+void reverse(int A[],int n)
+{
+int i,k,temp,low,up;
+printf("\nEnter the Lower limit Index: ");
+scanf("%d",&low);
+printf("\nEnter the Upper limit Index: ");
+scanf("%d",&up);
+
+for(i=low,k=up;i<k;i++,k--)
+{
+temp=A[i];
+A[i]=A[k];
+A[k]=temp;
+}
+}
+
